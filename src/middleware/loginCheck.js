@@ -1,7 +1,3 @@
-/**
- * @description 登录中间件
- * @author 双越老师
- */
 
 const { ErrorModel } = require('../res-model/index')
 

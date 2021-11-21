@@ -1,7 +1,3 @@
-/**
- * @description user controller
- * @author 双越老师
- */
 
 const { User } = require('../models/index')
 

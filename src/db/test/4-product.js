@@ -1,7 +1,4 @@
-/**
- * @description 商品数据 测试
- * @author 双越老师
- */
+
 
 const { Product } = require('../../models/index')
 

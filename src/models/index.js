@@ -1,7 +1,4 @@
-/**
- * @description Model 入口文件
- * @author 双越老师
- */
+
 
 const Address = require('./Address')
 const Order = require('./Order')

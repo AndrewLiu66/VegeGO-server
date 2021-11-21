@@ -1,7 +1,3 @@
-/**
- * @description 用户数据测试
- * @author 双越老师
- */
 
 const { User } = require('../../models/index')
 

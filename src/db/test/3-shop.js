@@ -1,7 +1,4 @@
-/**
- * @description 商店数据测试
- * @author 双越老师
- */
+
 
 const { Shop } = require('../../models/index')
 
