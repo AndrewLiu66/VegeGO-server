@@ -1,7 +1,3 @@
-/**
- * @description 订单数据测试
- * @author 双越老师
- */
 
 const { Address, Order, Product } = require('../../models/index')
 

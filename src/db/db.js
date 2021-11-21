@@ -1,7 +1,3 @@
-/**
- * @description mongoose 连接数据库
- * @author 双越老师
- */
 
 const mongoose = require('mongoose')
 

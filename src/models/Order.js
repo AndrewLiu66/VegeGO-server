@@ -1,7 +1,3 @@
-/**
- * @description Order Model
- * @author 双越老师
- */
 
 const mongoose = require('../db/db')
 

@@ -1,7 +1,3 @@
-/**
- * @description shop controller
- * @author 双越老师
- */
 
 const { Shop, Product } = require('../models/index')
 

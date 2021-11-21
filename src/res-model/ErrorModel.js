@@ -1,7 +1,4 @@
-/**
- * @description Error Model
- * @author 双越老师
- */
+
 
 class ErrorModel {
     constructor(errno = -1, message = 'error') {
