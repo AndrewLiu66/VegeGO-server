@@ -1,6 +1,6 @@
 const router = require('koa-router')()
 
-const { SuccessModel } = require('../res-model/index')
+const { SuccessModel, ErrorModel } = require('../res-module/index')
 const {
     getHotList,
     getShopInfo,
@@ -21,11 +21,12 @@ router.get('/:id', async function (ctx, next) {
     const shop = await getShopInfo(id)
     ctx.body = new SuccessModel(shop)
 })
-
+// 获取商店的商品
 router.get('/:id/products', async function (ctx, next) {
-    const id = ctx.params.id // 商店 id
+    const shopId = ctx.params.id // 商店 id
     const tab = ctx.query.tab || 'all' // query 里的 tab 参数，默认为 'all'
-    const products = await getProductsByShopId(id, tab)
+    // 获取商品
+    const products = await getProductsByShopId(shopId, tab)
     ctx.body = new SuccessModel(products)
 })
 

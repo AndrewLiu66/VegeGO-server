@@ -1,27 +1,39 @@
 
-const { Shop, Product } = require('../models/index')
+const Shop = require('../models/Shop')
+const Product = require('../models/Product')
 
-// 热门商店列表（目前没有判断是否热门的规则，就先以默认排序代替了）
+/**
+ * 获取商店列表（热门商店）
+ */
 async function getHotList() {
     const list = await Shop.find().sort({ _id: -1 }) // 逆序
     return list
 }
 
-// 根据 id 获取单个商店信息
+/**
+ * 获取商店信息
+ * @param {string} id id
+ */
 async function getShopInfo(id) {
     const shop = await Shop.findById(id)
     return shop
 }
-
-// 根据商店 id 获取商品
-async function getProductsByShopId(id, tab = '') {
-    const pList = await Product.find({
+/**
+ * 根据商店获取商品
+ * @param {string} shopId 商店id
+ * @param {string} tab tab分类
+ */
+async function getProductsByShopId(id, tab = 'all') {
+    const list = await Product.find({
+        // shopId,
+        // 由于mongooose版本的影响，这里需要按照如下方式书写
         shopId: id,
+
         tabs: {
-            $in: tab // 匹配 tabs: 用户只能点一个tab，然后把所有含有此tab的商品返回出来
+            $in: tab // 匹配 tabs
         }
     }).sort({ _id: -1 }) // 逆序
-    return pList
+    return list
 }
 
 module.exports = {

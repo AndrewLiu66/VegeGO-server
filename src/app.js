@@ -19,7 +19,7 @@ onerror(app)
 
 // 支持跨域
 app.use(cors({
-  origin: 'http://localhost:8081', // 支持跨域访问的域名
+  origin: 'http://localhost:8080', // 支持跨域访问的域名
   credentials: true // 允许跨域带 cookie
 }))
 
