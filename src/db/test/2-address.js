@@ -32,6 +32,4 @@ const { Address } = require('../../models/index')
     // 获取单个地址，根据 id 获取（以下两种写法都可以）
     // const address = await Address.findOne({ _id: '5ef05481e6f8ed3a3bb59880' })
     const address = await Address.findById('5ef05481e6f8ed3a3bb59881')
-    console.log('address', address)
-
 })()

@@ -59,5 +59,4 @@ const { Product } = require('../../models/index')
             $in: 'all' // 匹配 tabs
         }
     })
-    console.log('product list', pList)
 })()

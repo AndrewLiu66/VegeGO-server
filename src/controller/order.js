@@ -86,9 +86,7 @@ async function createOrder(username, data) {
  * @param {string} username 用户名
  */
 async function getOrderList(username) {
-    console.log('username', username)
     const list = await Order.find({ username }).sort({ _id: -1 })
-    console.log('list', list)
     return list
 }
 

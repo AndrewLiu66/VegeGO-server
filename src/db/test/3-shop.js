@@ -27,9 +27,7 @@ const { Shop } = require('../../models/index')
 
     // 获取商店列表
     const shopList = await Shop.find().sort({ _id: -1 }) // 逆序
-    console.log('shop list', shopList)
 
     // 获取单个商店，根据 id
     const shop = await Shop.findById('5ef05834f187fc3bbd81f4df')
-    console.log('shop', shop)
 })()

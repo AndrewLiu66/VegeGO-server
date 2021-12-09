@@ -16,9 +16,10 @@ router.prefix('/api/user')
 
 router.post('/register', async function (ctx, next) {
   const userInfo = ctx.request.body
+  const { username, password } = userInfo
   try
   {
-    await register(userInfo)
+    await register(username, password)
     // 返回成功
     ctx.body = new SuccessModel()
   } catch (ex)

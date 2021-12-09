@@ -1,7 +1,7 @@
 
 const { User } = require('../../models/index')
 
-!(async() => {
+!(async () => {
     // // 创建一个用户
     // const u1 = new User({
     //     username: 'zhangsan',
@@ -22,5 +22,4 @@ const { User } = require('../../models/index')
 
     // 获取单个用户
     const zhangsan = await User.findOne({ username: 'zhangsan', password: '123' })
-    console.log('zhangsan', zhangsan)
 })()
