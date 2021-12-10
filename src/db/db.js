@@ -1,7 +1,7 @@
 
 // const { MongoClient } = require('mongodb');
 const mongoose = require('mongoose')
-
+require('dotenv').config()
 // const uri = "mongodb+srv://andrew:Andrew1998,.@cluster0.oifpj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -37,7 +37,7 @@ mongoose.set('useCreateIndex', true)
 mongoose.set('useFindAndModify', false)
 
 // 开始连接
-mongoose.connect(`mongodb+srv://andrew:${password}@cluster0.oifpj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, {
+mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
