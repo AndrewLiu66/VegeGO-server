@@ -1,31 +1,57 @@
 
+// const { MongoClient } = require('mongodb');
 const mongoose = require('mongoose')
 
-const url = 'mongodb://localhost:27017' // 本地默认的 mongodb 服务地址
-const dbName = 'testdb' // 数据库名称
+// const uri = "mongodb+srv://andrew:Andrew1998,.@cluster0.oifpj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-// 以下设置，参考 https://mongoosejs.com/docs/deprecations.html#ensureIndex
-// 解决提示 DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+// client.connect(err => {
+//     const collection = client.db("test").collection("devices");
+//     // perform actions on the collection object
+//     client.close();
+// });
+
+// async function main() {
+//     const uri = "mongodb+srv://andrew:<password>@cluster0.oifpj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+//     // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+//     // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+
+//     try
+//     {
+//         await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+//     } catch (e)
+//     {
+//         console.error(e)
+//     } finally
+//     {
+//         await mongoose.close();
+//     }
+// }
+// main().catch(console.error)
+// connect locally
+const url = 'mongodb://localhost:27017'
+const password = 'andrew1998'
 mongoose.set('useCreateIndex', true)
-// 解决提示 DeprecationWarning: Mongoose: `findOneAndUpdate()` and `findOneAndDelete()` without the `useFindAndModify` option set to false are deprecated.
 mongoose.set('useFindAndModify', false)
 
 // 开始连接
-mongoose.connect(`${url}/${dbName}`, {
+mongoose.connect(`mongodb+srv://andrew:${password}@cluster0.oifpj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
 
-// 连接对象
+// // 连接对象
 const db = mongoose.connection
 
-db.on('error', err => {
-    console.error('mongoose connect error', err)
-})
-db.once('open', () => {
-    // 用以测试数据库连接是否成功
-    console.log('mongoose connect success')
-})
+// db.on('error', err => {
+//     console.error('mongoose connect error', err)
+// })
+// db.once('open', () => {
+//     // 用以测试数据库连接是否成功
+//     console.log('mongoose connect success')
+// })
 
 /**
  * 注意：
